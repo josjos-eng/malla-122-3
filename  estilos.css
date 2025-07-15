@@ -1,35 +1,292 @@
-:root{
-  --verde:#38b000;  /* aprobada   */
-  --rojo:#d90429;   /* reprobada  */
-  --azul:#0077b6;   /* pendiente  */
-  --naranja:#ff8500;/* highlight  */
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --info: #1abc9c;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --gray: #95a5a6;
+    --unregistered: #9b59b6;
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
-
-body{
-  font-family:system-ui, sans-serif;
-  margin:0;
-  padding:2rem;
-  background:#f7f7f7;
-  color:#222;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-h1{margin-top:0}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
-  gap:1rem;
-  margin-top:1rem;
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
-.card{
-  padding:.75rem;
-  border-radius:.75rem;
-  color:#fff;
-  cursor:pointer;
-  user-select:none;
-  text-align:center;
-  transition:transform .1s;
+.container {
+    width: 100%;
+    max-width: 1400px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
 }
-.card:active{transform:scale(.96)}
-.card.highlight{outline:4px solid var(--naranja)}
-.card.pending{background:var(--azul)}
-.card.passed {background:var(--verde)}
-.card.failed {background:var(--rojo)}
+header {
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;
+}
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.user-info {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-info i {
+    font-size: 1.5rem;
+}
+.page {
+    display: none;
+    padding: 20px;
+    flex-grow: 1;
+}
+.active-page {
+    display: flex;
+    flex-direction: column;
+}
+.login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--secondary);
+}
+.login-header i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.curriculum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+}
+.stats-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.stat-card {
+    padding: 12px 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+}
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+.total-courses .stat-value {
+    color: var(--primary);
+}
+.approved-courses .stat-value {
+    color: var(--success);
+}
+.registered-courses .stat-value {
+    color: var(--warning);
+}
+.failed-courses .stat-value {
+    color: var(--danger);
+}
+.concept-map-container {
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+.concept-map {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 30px;
+    min-width: 1200px;
+    min-height: 700px;
+    position: relative;
+}
+.semester-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.semester-header {
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.course-node {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+}
+.course-node:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 3;
+}
+.course-node.no_inscrita {
+    background: white;
+    border: 2px solid var(--unregistered);
+}
+.course-node.registrada {
+    background: rgba(243, 156, 18, 0.1);
+    border: 2px solid var(--warning);
+}
+.course-node.aprobada {
+    background: rgba(46, 204, 113, 0.1);
+    border: 2px solid var(--success);
+}
+.course-node.aplazada {
+    background: rgba(231, 76, 60, 0.1);
+    border: 2px solid var(--danger);
+}
+.course-code {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+.course-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--secondary);
+    flex-grow: 1;
+}
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+.course-credits {
+    background: var(--light);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.course-status {
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.course-status.no_inscrita {
+    background: rgba(155, 89, 182, 0.2);
+    color: var(--unregistered);
+}
+.course-status.registrada {
+    background: rgba(243, 156, 18, 0.2);
+    color: var(--warning);
+}
+.course-status.aprobada {
+    background: rgba(46, 204, 113, 0.2);
+    color: var(--success);
+}
+.course-status.aplazada {
+    background: rgba(231, 76, 60, 0.2);
+    color: var(--danger);
+}
+.prerequisite-line {
+    position: absolute;
+    background: var(--gray);
+    height: 2px
