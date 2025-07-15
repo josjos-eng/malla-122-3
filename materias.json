@@ -1,0 +1,40 @@
+{
+    "Primer Semestre": [
+        {"nombre": "QUIMICA GENERAL", "codigo": "QMG122", "creditos": 4},
+        {"nombre": "FISICA BASICA I", "codigo": "FBI122", "creditos": 4},
+        {"nombre": "DIBUJO TECNICO I", "codigo": "DTI122", "creditos": 3},
+        {"nombre": "CALCULO I", "codigo": "CAL1122", "creditos": 5},
+        {"nombre": "ALGEBRA I", "codigo": "ALG1122", "creditos": 4}
+    ],
+    "SEGUNDO SEMESTRE": [
+        {"nombre": "QUIMICA ORGANICA", "codigo": "QO122", "creditos": 4, "prerequisito": "QUIMICA GENERAL"},
+        {"nombre": "FISICA BASICA II", "codigo": "FBII122", "creditos": 4, "prerequisito": ["CALCULO I", "FISICA BASICA I"]},
+        {"nombre": "INFORMATICA I", "codigo": "INF1122", "creditos": 3, "prerequisito": "DIBUJO TECNICO I"},
+        {"nombre": "CALCULO II", "codigo": "CAL2122", "creditos": 5, "prerequisito": "CALCULO I"},
+        {"nombre": "ALGEBRA II", "codigo": "ALG2122", "creditos": 4, "prerequisito": "ALGEBRA I"},
+        {"nombre": "ECONOMIA GENERAL", "codigo": "ECG122", "creditos": 3, "prerequisito": "ALGEBRA I"}
+    ],
+    "TECER SEMESTRE": [
+        {"nombre": "FISICOQUIMICA", "codigo": "FQ122", "creditos": 4, "prerequisito": ["QUIMICA ORGANICA", "FISICA BASICA II"]},
+        {"nombre": "FISICA BASICA III", "codigo": "FBIII122", "creditos": 4, "prerequisito": ["FISICA BASICA II", "CALCULO II"]},
+        {"nombre": "CIENCIAS DE LOS MATERIALES", "codigo": "CM122", "creditos": 3, "prerequisito": "INFORMATICA I"},
+        {"nombre": "ECUACIONES DIFERENCIALES", "codigo": "ED122", "creditos": 5, "prerequisito": "CALCULO II"},
+        {"nombre": "PROBABILIDAD Y ESTADISTICA", "codigo": "PE122", "creditos": 4, "prerequisito": "ALGEBRA II"},
+        {"nombre": "CONTABILIDAD INDUSTRIAL", "codigo": "CI122", "creditos": 3, "prerequisito": "ECONOMIA GENERAL"}
+    ],
+    "CUARTO SEMESTRE": [
+        {"nombre": "TERMODINAMICA TECNICA", "codigo": "TT122", "creditos": 4, "prerequisito": "FISICOQUIMICA"},
+        {"nombre": "RESISTENCIA DE LOS MATERIALES", "codigo": "RM122", "creditos": 4, "prerequisito": ["FISICA BASICA III", "CIENCIAS DE LOS MATERIALES"]},
+        {"nombre": "NORMAS LEGALES", "codigo": "NL122", "creditos": 3, "prerequisito": "ECUACIONES DIFERENCIALES"},
+        {"nombre": "ESTADISTICA MATEMATICA", "codigo": "EM122", "creditos": 4, "prerequisito": "PROBABILIDAD Y ESTADISTICA"},
+        {"nombre": "MECADOTECNIA INDUSTRIAL", "codigo": "MI122", "creditos": 3, "prerequisito": "CONTABILIDAD INDUSTRIAL"}
+    ],
+    "QUINTO SEMESTRE": [
+        {"nombre": "MAQUINAS TERMICAS", "codigo": "MT122", "creditos": 4, "prerequisito": "TERMODINAMICA"},
+        {"nombre": "TECNOLOGIA MECANICA", "codigo": "TM122", "creditos": 4, "prerequisito": "RESISTENCIA DE LOS MATERIALES"},
+        {"nombre": "ELECTROTECNIA INDUSTRIAL I", "codigo": "EI122", "creditos": 4, "prerequisito": "CIENCIAS DE LOS MATERIALES"},
+        {"nombre": "METODOLOGIA DE LA INVESTIGACION", "codigo": "MI122", "creditos": 3, "prerequisito": ["NORMAS LEGALES", "ESTADISTICA MATEMATICA"]},
+        {"nombre": "INVESTIGACION OPERATIVA I", "codigo": "IO1122", "creditos": 4, "prerequisito": "ESTADISTICA MATEMATICA"},
+        {"nombre": "ADMINISTRACION INDUSTRIAL", "codigo": "AI122", "creditos": 3, "prerequisito": "MECADOTECNIA INDUSTRIAL"}
+    ]
+}
