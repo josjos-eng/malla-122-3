@@ -1,40 +1,582 @@
-{
-    "Primer Semestre": [
-        {"nombre": "QUIMICA GENERAL", "codigo": "QMG122", "creditos": 4},
-        {"nombre": "FISICA BASICA I", "codigo": "FBI122", "creditos": 4},
-        {"nombre": "DIBUJO TECNICO I", "codigo": "DTI122", "creditos": 3},
-        {"nombre": "CALCULO I", "codigo": "CAL1122", "creditos": 5},
-        {"nombre": "ALGEBRA I", "codigo": "ALG1122", "creditos": 4}
-    ],
-    "SEGUNDO SEMESTRE": [
-        {"nombre": "QUIMICA ORGANICA", "codigo": "QO122", "creditos": 4, "prerequisito": "QUIMICA GENERAL"},
-        {"nombre": "FISICA BASICA II", "codigo": "FBII122", "creditos": 4, "prerequisito": ["CALCULO I", "FISICA BASICA I"]},
-        {"nombre": "INFORMATICA I", "codigo": "INF1122", "creditos": 3, "prerequisito": "DIBUJO TECNICO I"},
-        {"nombre": "CALCULO II", "codigo": "CAL2122", "creditos": 5, "prerequisito": "CALCULO I"},
-        {"nombre": "ALGEBRA II", "codigo": "ALG2122", "creditos": 4, "prerequisito": "ALGEBRA I"},
-        {"nombre": "ECONOMIA GENERAL", "codigo": "ECG122", "creditos": 3, "prerequisito": "ALGEBRA I"}
-    ],
-    "TECER SEMESTRE": [
-        {"nombre": "FISICOQUIMICA", "codigo": "FQ122", "creditos": 4, "prerequisito": ["QUIMICA ORGANICA", "FISICA BASICA II"]},
-        {"nombre": "FISICA BASICA III", "codigo": "FBIII122", "creditos": 4, "prerequisito": ["FISICA BASICA II", "CALCULO II"]},
-        {"nombre": "CIENCIAS DE LOS MATERIALES", "codigo": "CM122", "creditos": 3, "prerequisito": "INFORMATICA I"},
-        {"nombre": "ECUACIONES DIFERENCIALES", "codigo": "ED122", "creditos": 5, "prerequisito": "CALCULO II"},
-        {"nombre": "PROBABILIDAD Y ESTADISTICA", "codigo": "PE122", "creditos": 4, "prerequisito": "ALGEBRA II"},
-        {"nombre": "CONTABILIDAD INDUSTRIAL", "codigo": "CI122", "creditos": 3, "prerequisito": "ECONOMIA GENERAL"}
-    ],
-    "CUARTO SEMESTRE": [
-        {"nombre": "TERMODINAMICA TECNICA", "codigo": "TT122", "creditos": 4, "prerequisito": "FISICOQUIMICA"},
-        {"nombre": "RESISTENCIA DE LOS MATERIALES", "codigo": "RM122", "creditos": 4, "prerequisito": ["FISICA BASICA III", "CIENCIAS DE LOS MATERIALES"]},
-        {"nombre": "NORMAS LEGALES", "codigo": "NL122", "creditos": 3, "prerequisito": "ECUACIONES DIFERENCIALES"},
-        {"nombre": "ESTADISTICA MATEMATICA", "codigo": "EM122", "creditos": 4, "prerequisito": "PROBABILIDAD Y ESTADISTICA"},
-        {"nombre": "MECADOTECNIA INDUSTRIAL", "codigo": "MI122", "creditos": 3, "prerequisito": "CONTABILIDAD INDUSTRIAL"}
-    ],
-    "QUINTO SEMESTRE": [
-        {"nombre": "MAQUINAS TERMICAS", "codigo": "MT122", "creditos": 4, "prerequisito": "TERMODINAMICA"},
-        {"nombre": "TECNOLOGIA MECANICA", "codigo": "TM122", "creditos": 4, "prerequisito": "RESISTENCIA DE LOS MATERIALES"},
-        {"nombre": "ELECTROTECNIA INDUSTRIAL I", "codigo": "EI122", "creditos": 4, "prerequisito": "CIENCIAS DE LOS MATERIALES"},
-        {"nombre": "METODOLOGIA DE LA INVESTIGACION", "codigo": "MI122", "creditos": 3, "prerequisito": ["NORMAS LEGALES", "ESTADISTICA MATEMATICA"]},
-        {"nombre": "INVESTIGACION OPERATIVA I", "codigo": "IO1122", "creditos": 4, "prerequisito": "ESTADISTICA MATEMATICA"},
-        {"nombre": "ADMINISTRACION INDUSTRIAL", "codigo": "AI122", "creditos": 3, "prerequisito": "MECADOTECNIA INDUSTRIAL"}
+[
+  {
+    "semester": "Primer Semestre",
+    "courses": [
+      {
+        "id": "qmg122",
+        "code": "QMG122",
+        "name": "QUIMICA GENERAL",
+        "credits": 4,
+        "prerequisites": [],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 302 - Edificio B"
+      },
+      {
+        "id": "fbi122",
+        "code": "FBI122",
+        "name": "FISICA BASICA I",
+        "credits": 4,
+        "prerequisites": [],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 105 - Edificio A"
+      },
+      {
+        "id": "dti122",
+        "code": "DTI122",
+        "name": "DIBUJO TECNICO I",
+        "credits": 3,
+        "prerequisites": [],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Arq. Miguel Torres",
+        "classroom": "Laboratorio 5 - Edificio C"
+      },
+      {
+        "id": "cal1122",
+        "code": "CAL1122",
+        "name": "CALCULO I",
+        "credits": 5,
+        "prerequisites": [],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 201 - Edificio A"
+      },
+      {
+        "id": "alg1122",
+        "code": "ALG1122",
+        "name": "ALGEBRA I",
+        "credits": 4,
+        "prerequisites": [],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 203 - Edificio A"
+      }
     ]
-}
+  },
+  {
+    "semester": "Segundo Semestre",
+    "courses": [
+      {
+        "id": "qo122",
+        "code": "QO122",
+        "name": "QUIMICA ORGANICA",
+        "credits": 4,
+        "prerequisites": ["QUIMICA GENERAL"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Patricia Vargas",
+        "classroom": "Aula 305 - Edificio B"
+      },
+      {
+        "id": "fbii122",
+        "code": "FBII122",
+        "name": "FISICA BASICA II",
+        "credits": 4,
+        "prerequisites": ["CALCULO I", "FISICA BASICA I"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 107 - Edificio A"
+      },
+      {
+        "id": "inf1122",
+        "code": "INF1122",
+        "name": "INFORMATICA I",
+        "credits": 3,
+        "prerequisites": ["DIBUJO TECNICO I"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Javier López",
+        "classroom": "Laboratorio 3 - Edificio C"
+      },
+      {
+        "id": "cal2122",
+        "code": "CAL2122",
+        "name": "CALCULO II",
+        "credits": 5,
+        "prerequisites": ["CALCULO I"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 202 - Edificio A"
+      },
+      {
+        "id": "alg2122",
+        "code": "ALG2122",
+        "name": "ALGEBRA II",
+        "credits": 4,
+        "prerequisites": ["ALGEBRA I"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 204 - Edificio A"
+      },
+      {
+        "id": "ecg122",
+        "code": "ECG122",
+        "name": "ECONOMIA GENERAL",
+        "credits": 3,
+        "prerequisites": ["ALGEBRA I"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 101 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Tercer Semestre",
+    "courses": [
+      {
+        "id": "fq122",
+        "code": "FQ122",
+        "name": "FISICOQUIMICA",
+        "credits": 4,
+        "prerequisites": ["QUIMICA ORGANICA", "FISICA BASICA II"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 306 - Edificio B"
+      },
+      {
+        "id": "fbiii122",
+        "code": "FBIII122",
+        "name": "FISICA BASICA III",
+        "credits": 4,
+        "prerequisites": ["FISICA BASICA II", "CALCULO II"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 108 - Edificio A"
+      },
+      {
+        "id": "cm122",
+        "code": "CM122",
+        "name": "CIENCIAS DE LOS MATERIALES",
+        "credits": 3,
+        "prerequisites": ["INFORMATICA I"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Sofía Castro",
+        "classroom": "Laboratorio 4 - Edificio C"
+      },
+      {
+        "id": "ed122",
+        "code": "ED122",
+        "name": "ECUACIONES DIFERENCIALES",
+        "credits": 5,
+        "prerequisites": ["CALCULO II"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 203 - Edificio A"
+      },
+      {
+        "id": "pe122",
+        "code": "PE122",
+        "name": "PROBABILIDAD Y ESTADISTICA",
+        "credits": 4,
+        "prerequisites": ["ALGEBRA II"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 205 - Edificio A"
+      },
+      {
+        "id": "ci122",
+        "code": "CI122",
+        "name": "CONTABILIDAD INDUSTRIAL",
+        "credits": 3,
+        "prerequisites": ["ECONOMIA GENERAL"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 102 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Cuarto Semestre",
+    "courses": [
+      {
+        "id": "tt122",
+        "code": "TT122",
+        "name": "TERMODINAMICA TECNICA",
+        "credits": 4,
+        "prerequisites": ["FISICOQUIMICA"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 307 - Edificio B"
+      },
+      {
+        "id": "rm122",
+        "code": "RM122",
+        "name": "RESISTENCIA DE LOS MATERIALES",
+        "credits": 4,
+        "prerequisites": ["FISICA BASICA III", "CIENCIAS DE LOS MATERIALES"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 109 - Edificio A"
+      },
+      {
+        "id": "nl122",
+        "code": "NL122",
+        "name": "NORMAS LEGALES",
+        "credits": 3,
+        "prerequisites": ["ECUACIONES DIFERENCIALES"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Lic. Ricardo Vargas",
+        "classroom": "Aula 103 - Edificio D"
+      },
+      {
+        "id": "em122",
+        "code": "EM122",
+        "name": "ESTADISTICA MATEMATICA",
+        "credits": 4,
+        "prerequisites": ["PROBABILIDAD Y ESTADISTICA"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 206 - Edificio A"
+      },
+      {
+        "id": "mi122",
+        "code": "MI122",
+        "name": "MECADOTECNIA INDUSTRIAL",
+        "credits": 3,
+        "prerequisites": ["CONTABILIDAD INDUSTRIAL"],
+        "schedule": "Viernes 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 104 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Quinto Semestre",
+    "courses": [
+      {
+        "id": "mt122",
+        "code": "MT122",
+        "name": "MAQUINAS TERMICAS",
+        "credits": 4,
+        "prerequisites": ["TERMODINAMICA"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 308 - Edificio B"
+      },
+      {
+        "id": "tm122",
+        "code": "TM122",
+        "name": "TECNOLOGIA MECANICA",
+        "credits": 4,
+        "prerequisites": ["RESISTENCIA DE LOS MATERIALES"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 110 - Edificio A"
+      },
+      {
+        "id": "ei122",
+        "code": "EI122",
+        "name": "ELECTROTECNIA INDUSTRIAL I",
+        "credits": 4,
+        "prerequisites": ["CIENCIAS DE LOS MATERIALES"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Sofía Castro",
+        "classroom": "Laboratorio 2 - Edificio C"
+      },
+      {
+        "id": "mi122",
+        "code": "MI122",
+        "name": "METODOLOGIA DE LA INVESTIGACION",
+        "credits": 3,
+        "prerequisites": ["NORMAS LEGALES", "ESTADISTICA MATEMATICA"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 207 - Edificio A"
+      },
+      {
+        "id": "io1122",
+        "code": "IO1122",
+        "name": "INVESTIGACION OPERATIVA I",
+        "credits": 4,
+        "prerequisites": ["ESTADISTICA MATEMATICA"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 208 - Edificio A"
+      },
+      {
+        "id": "ai122",
+        "code": "AI122",
+        "name": "ADMINISTRACION INDUSTRIAL",
+        "credits": 3,
+        "prerequisites": ["MECADOTECNIA INDUSTRIAL"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 105 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Sexto Semestre",
+    "courses": [
+      {
+        "id": "ou1122",
+        "code": "OU1122",
+        "name": "OPERACIONES UNITARIAS I",
+        "credits": 4,
+        "prerequisites": ["MAQUINAS TERMICAS"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 309 - Edificio B"
+      },
+      {
+        "id": "em122",
+        "code": "EM122",
+        "name": "ELEMENTOS DE MAQUINAS",
+        "credits": 4,
+        "prerequisites": ["TECNOLOGIA MECANICA", "ELECTROTECNIA INDUSTRIAL I"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 111 - Edificio A"
+      },
+      {
+        "id": "elec1122",
+        "code": "ELEC1122",
+        "name": "ELECTIVA I",
+        "credits": 3,
+        "prerequisites": ["ELECTROTECNIA INDUSTRIAL I", "NORMAS LEGALES"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Javier López",
+        "classroom": "Laboratorio 1 - Edificio C"
+      },
+      {
+        "id": "gt122",
+        "code": "GT122",
+        "name": "GESTION DE TALENTO",
+        "credits": 3,
+        "prerequisites": ["METODOLOGIA DE LA INVESTIGACION"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 209 - Edificio A"
+      },
+      {
+        "id": "io2122",
+        "code": "IO2122",
+        "name": "INVESTIGACION OPERATIVA II",
+        "credits": 4,
+        "prerequisites": ["INVESTIGACION OPERATIVA I"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 210 - Edificio A"
+      },
+      {
+        "id": "im122",
+        "code": "IM122",
+        "name": "INGENIERIA DE METODOS",
+        "credits": 3,
+        "prerequisites": ["ADMINISTRACION INDUSTRIAL", "METODOLOGIA DE LA INVESTIGACION"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 106 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Séptimo Semestre",
+    "courses": [
+      {
+        "id": "ou2122",
+        "code": "OU2122",
+        "name": "OPERACIONES UNITARIAS II",
+        "credits": 4,
+        "prerequisites": ["OPERACIONES UNITARIAS I"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 310 - Edificio B"
+      },
+      {
+        "id": "ca122",
+        "code": "CA122",
+        "name": "CONTROL AUTOMATICO",
+        "credits": 4,
+        "prerequisites": ["ELEMENTOS DE MAQUINAS"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 112 - Edificio A"
+      },
+      {
+        "id": "hsi122",
+        "code": "HSI122",
+        "name": "HIGIENE Y SEGURIDAD INDUSTRIAL",
+        "credits": 3,
+        "prerequisites": ["ELECTIVA I", "ELEMENTOS DE MAQUINAS"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Javier López",
+        "classroom": "Laboratorio 6 - Edificio C"
+      },
+      {
+        "id": "fi122",
+        "code": "FI122",
+        "name": "FINANZAS PARA LA INGIENERIA",
+        "credits": 3,
+        "prerequisites": ["GESTION DE TALENTO"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 211 - Edificio A"
+      },
+      {
+        "id": "pcp1122",
+        "code": "PCP1122",
+        "name": "PLANIFICACION CONTROL DE PRODUCCION I",
+        "credits": 4,
+        "prerequisites": ["INVESTIGACION OPERATIVA II"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 212 - Edificio A"
+      },
+      {
+        "id": "ci1122",
+        "code": "CI1122",
+        "name": "COSTOS INDUSTRIALES I",
+        "credits": 3,
+        "prerequisites": ["INGENIERIA DE METODOS"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 107 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Octavo Semestre",
+    "courses": [
+      {
+        "id": "pi122",
+        "code": "PI122",
+        "name": "PROCESOS INDUSTRIALES",
+        "credits": 4,
+        "prerequisites": ["OPERACIONES UNITARIAS II"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 311 - Edificio B"
+      },
+      {
+        "id": "mai122",
+        "code": "MAI122",
+        "name": "MEDIO AMBIENTE EN LA INDUSTRIA",
+        "credits": 3,
+        "prerequisites": ["CONTROL AUTOMATICO"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 113 - Edificio A"
+      },
+      {
+        "id": "mii122",
+        "code": "MII122",
+        "name": "MANTENIMIENTO E INTALACIONES INDUSTRIALES",
+        "credits": 4,
+        "prerequisites": ["HIGIENE Y SEGURIDAD INDUSTRIAL"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Javier López",
+        "classroom": "Laboratorio 7 - Edificio C"
+      },
+      {
+        "id": "pep122",
+        "code": "PEP122",
+        "name": "PREPARACION Y EVALUACION DE PROYECTO",
+        "credits": 3,
+        "prerequisites": ["FINANZAS PARA LA INGIENERIA"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 213 - Edificio A"
+      },
+      {
+        "id": "pcp2122",
+        "code": "PCP2122",
+        "name": "PLANIFICACION CONTROL DE PRODUCCIO II",
+        "credits": 4,
+        "prerequisites": ["PLANIFICACION CONTROL DE PRODUCCION I"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 214 - Edificio A"
+      },
+      {
+        "id": "ci2122",
+        "code": "CI2122",
+        "name": "COSTOS INDUSTRIALES II",
+        "credits": 3,
+        "prerequisites": ["COSTOS INDUSTRIALES I"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 108 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Noveno Semestre",
+    "courses": [
+      {
+        "id": "cc122",
+        "code": "CC122",
+        "name": "CONTROL DE CALIDAD",
+        "credits": 4,
+        "prerequisites": ["PROCESOS INDUSTRIALES"],
+        "schedule": "Lunes y Miércoles 8:00-10:00",
+        "professor": "Dr. Carlos Mendoza",
+        "classroom": "Aula 312 - Edificio B"
+      },
+      {
+        "id": "elec2122",
+        "code": "ELEC2122",
+        "name": "ELECTIVA II",
+        "credits": 3,
+        "prerequisites": ["MEDIO AMBIENTE EN LA INDUSTRIA", "HIGIENE Y SEGURIDAD INDUSTRIAL"],
+        "schedule": "Martes y Jueves 8:00-10:00",
+        "professor": "Ing. Laura Ramírez",
+        "classroom": "Aula 114 - Edificio A"
+      },
+      {
+        "id": "ta122",
+        "code": "TA122",
+        "name": "TECNOLOGIAS AVANZADAS",
+        "credits": 4,
+        "prerequisites": ["MANTENIMIENTO E INTALACIONES INDUSTRIALES"],
+        "schedule": "Lunes y Miércoles 10:00-12:00",
+        "professor": "Ing. Javier López",
+        "classroom": "Laboratorio 8 - Edificio C"
+      },
+      {
+        "id": "ei122",
+        "code": "EI122",
+        "name": "ENPREDEDURISMO INOVACION",
+        "credits": 3,
+        "prerequisites": ["PREPARACION Y EVALUACION DE PROYECTO"],
+        "schedule": "Martes y Jueves 10:00-12:00",
+        "professor": "Dr. Ana Gutiérrez",
+        "classroom": "Aula 215 - Edificio A"
+      },
+      {
+        "id": "log122",
+        "code": "LOG122",
+        "name": "LOGISTICA",
+        "credits": 4,
+        "prerequisites": ["PLANIFICACION CONTROL DE PRODUCCION II"],
+        "schedule": "Viernes 8:00-12:00",
+        "professor": "MSc. Roberto Sánchez",
+        "classroom": "Aula 216 - Edificio A"
+      },
+      {
+        "id": "pe122",
+        "code": "PE122",
+        "name": "PLANEACION ESTRATEGICA",
+        "credits": 3,
+        "prerequisites": ["COSTOS INDUSTRIALES II", "PLANIFICACION CONTROL DE PRODUCCION II"],
+        "schedule": "Sábado 8:00-11:00",
+        "professor": "Lic. Fernando Morales",
+        "classroom": "Aula 109 - Edificio D"
+      }
+    ]
+  },
+  {
+    "semester": "Décimo Semestre",
+    "courses": [
+      {
+        "id": "pi122",
+        "code": "PI122",
+        "name": "PRACTICAS INDUSTRIALES",
+        "credits": 10,
+        "prerequisites": ["Todas las materias del noveno semestre"],
+        "schedule": "Lunes a Viernes 8:00-17:00",
+        "professor": "Coordinador de Prácticas",
+        "classroom": "Empresa asignada"
+      }
+    ]
+  }
+]
